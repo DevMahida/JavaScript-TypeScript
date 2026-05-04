@@ -7,7 +7,6 @@ Short demo project showing how to work with arrays of objects in JavaScript/Type
 
 ## Files
 - `index.html` — example HTML demo
-- `index.jsx` — React example (if used)
 - `ts.html` — TypeScript demo runner
 - `css/bootstrap.min.css` — styles
 - `JS/bootstrap.bundle.min.js` — Bootstrap bundle
