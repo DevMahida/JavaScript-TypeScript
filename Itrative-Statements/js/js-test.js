@@ -16,7 +16,7 @@ while (q1_v1 != 0) {
 
 q1Ans.innerHTML = "Reverse Number is : " + (rev_num_q1 / 10);
 
-// revser number
+// palindrome
 let q2_v1 = 232;
 let rev_num_q2 = 0;
 let pal = q2_v1;
@@ -76,7 +76,7 @@ else {
     q3Ans.innerHTML += "<li>Seriously 0 as input -_- .</li>";
 }
 
-// fibonnaci
+// Factorial
 let q4_v1 = 5;
 let fac = 1;
 
