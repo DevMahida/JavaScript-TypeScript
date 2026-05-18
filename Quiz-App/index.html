@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="./assets/CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/CSS/style.css">
+</head>
+
+<body class="bg-light">
+    <header class="container p-3">
+        <section class="d-flex justify-content-between align-items-center">
+            <h1 class="h2 fw-bold color-purple">Quiz Master</h1>
+            <div>
+                <img src="./assets/images/user.png" alt="" width="50    px">
+            </div>
+        </section>
+    </header>
+
+    <main>
+
+        <!-- banner result  -->
+        <section>
+            <div class="container">
+                <div class="row">
+
+                    <!-- banner -->
+                    <div class="col-8">
+                        <div class="ratio ratio-16x9 bg-banner rounded-3 position-relative overflow-hidden">
+                            <div class="p-5 banner d-flex align-items-center">
+                                <div>
+                                    <h2 class="h1 color-banner">Quiz of the day</h2>
+                                    <p class="w-75 text-light">Here’s a quick random trivia quiz with multi-topic
+                                        programming language quiz</p>
+                                    <button class="btn btn-primary">Start Today's Quiz <i
+                                            class="ri-arrow-right-line"></i></button>
+                                </div>
+                                <div class="position-absolute up up-down">
+                                    <img src="./assets/images/banner.png" alt="" width="200 px">
+                                </div>
+                                <div class="position-absolute side up-down">
+                                    <img src="./assets/images/banner.png" alt="" width="200px">
+                                </div>
+                                <div class="position-absolute down up-down">
+                                    <img src="./assets/images/banner.png" alt="" width="200px">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- result -->
+                    <div class="col-4">
+                        <div class="ratio cs-ratio rounded-3 bg-white border border-primary">
+                            <div class="p-4">
+
+                                <!-- title -->
+                                <div class="d-flex justify-content-between">
+                                    <h4 class="color-purple">Results</h4>
+                                    <span><i class="ri-history-line"></i></span>
+                                </div>
+
+                                <!-- data -->
+                                <div class="row mt-1 g-3">
+
+                                    <!-- 1st entry -->
+                                    <div class="col-12">
+                                        <div class="d-flex align-items-center justify-content-between">
+
+                                            <div class="d-flex align-items-center gap-3">
+                                                <!-- % -->
+                                                <div
+                                                    class="d-inline-block bg-cs-light-green px-1 py-2 text-success rounded-circle border border-success">
+                                                    95%
+                                                </div>
+
+                                                <!-- data -->
+                                                <div class="lh-sm d-flex flex-column">
+                                                    <p class="m-0">HTML5 Semantic</p>
+                                                    <span class="text-muted small">19/20 coorect</span>
+                                                </div>
+                                            </div>
+
+                                            <!-- view -->
+                                            <div>
+                                                <button class="btn btn-outline-primary">View</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- 2nd entry -->
+                                    <div class="col-12">
+                                        <div class="d-flex align-items-center justify-content-between">
+
+                                            <div class="d-flex align-items-center gap-3">
+                                                <!-- % -->
+                                                <div class="d-inline-block bg-cs-light-brown px-1 py-2 rounded-circle">
+                                                    75%
+                                                </div>
+
+                                                <!-- data -->
+                                                <div class="lh-sm d-flex flex-column">
+                                                    <p class="m-0">CSS</p>
+                                                    <span class="text-muted small">16/20 coorect</span>
+                                                </div>
+                                            </div>
+
+                                            <!-- view -->
+                                            <div>
+                                                <button class="btn btn-outline-primary">View</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- 3rd entry -->
+                                    <div class="col-12">
+                                        <div class="d-flex align-items-center justify-content-between">
+
+                                            <div class="d-flex align-items-center gap-3">
+                                                <!-- % -->
+                                                <div
+                                                    class="d-inline-block bg-cs-light-red px-1 py-2 text-danger rounded-circle border border-danger">
+                                                    49%
+                                                </div>
+
+                                                <!-- data -->
+                                                <div class="lh-sm d-flex flex-column">
+                                                    <p class="m-0">Javascript</p>
+                                                    <span class="text-muted small">9/20 coorect</span>
+                                                </div>
+                                            </div>
+
+                                            <!-- view -->
+                                            <div>
+                                                <button class="btn btn-outline-primary">View</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- more quiz -->
+        <section class="my-4">
+            <div class="container">
+
+                <!-- title -->
+                <div class="border border-primary rounded-3 p-3">
+                    <h2 class="h3 color-purple">More Quiz</h2>
+
+                    <div class="row mt-3">
+                        
+                        <!-- HTML -->
+                        <div class="col-4">
+                            <div class="border border-2 p-4 rounded-3">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="d-inline-block p-3 fs rounded-3">HTML</span>
+                                    <span class="d-inline-block p-2 fs rounded-3">20 Qs</span>
+                                </div>
+                                <div class="mt-3">
+                                    <h5 class="mb-0">HTML5</h5>
+                                    <p class="text-muted small">Important pillar of Web development</p>
+                                    <hr>
+                                    <div class="text-end">
+                                        <button class="btn btn-outline-primary ">Start <i class="ri-arrow-right-line"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CSS -->
+                        <div class="col-4">
+                            <div class="border border-2 p-4 rounded-3">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="d-inline-block p-3 fs rounded-3">CSS</span>
+                                    <span class="d-inline-block p-2 fs rounded-3">30 Qs</span>
+                                </div>
+                                <div class="mt-3">
+                                    <h5 class="mb-0">Cascading Style Sheet</h5>
+                                    <p class="text-muted small">Create attractive and responsive interfaces</p>
+                                    <hr>
+                                    <div class="text-end">
+                                        <button class="btn btn-outline-primary ">Start <i class="ri-arrow-right-line"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- JS -->
+                        <div class="col-4">
+                            <div class="border border-2 p-4 rounded-3">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="d-inline-block p-3 fs rounded-3">JS</span>
+                                    <span class="d-inline-block p-2 fs rounded-3">30 Qs</span>
+                                </div>
+                                <div class="mt-3">
+                                    <h5 class="mb-0">Javascript</h5>
+                                    <p class="text-muted small">Adds interactivity to webpages</p>
+                                    <hr>
+                                    <div class="text-end">
+                                        <button class="btn btn-outline-primary ">Start <i class="ri-arrow-right-line"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </section>
+    </main>
+
+    <script src="./assets/JS/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">click me</button>
+    <div id="box" style="width: 250px; height: 250px; background-color: aqua; transition: all 0.2s linear;"></div>
+
+    <script>
+        let btn = document.getElementById("btn");
+        let box = document.getElementById("box");
+
+        btn.addEventListener("click", function () {
+            box.style.backgroundColor = `rgb(${parseInt(Math.random() * 256)},${parseInt(Math.random() * 256)},${parseInt(Math.random() * 256)})`;
+            // box.style.border = "4px solid blue";
+        })
+
+    </script>
+</body>
+
+</html>
