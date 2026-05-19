@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Page</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="./assets/CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/CSS/style.css">
+</head>
+
+<body class="bg-light">
+    <header class="container p-3">
+        <section class="d-flex justify-content-between align-items-center">
+            <a class="text-decoration-none" href="./index.html">
+                <h1 class="h2 fw-bold color-purple">Quiz Master</h1>
+            </a>
+            <div>
+                <img src="./assets/images/user.png" alt="" width="50    px">
+            </div>
+        </section>
+    </header>
+
+    <main>
+        <section class="mt-3" id="start">
+            <div class="container">
+                <div class="bg-white ratio ratio-16x9 rounded-3">
+
+                    <!-- title start -->
+                    <div class="p-3">
+                        <h1 class="text-center display-3 fw-normal"><span class="text-capitalize" id="heading"></span>
+                            Quiz</h1>
+
+                        <!-- btn / question -->
+                        <div class="mt-5 text-center">
+                            <button id="quizStart" class="btn btn-outline-primary">Start</button>
+                            <a href="./index.html" id="quizBack" class="btn btn-outline-primary">Back</a>
+
+                            <!-- questions -->
+                            <div id="quizQuesBody" class="d-none">
+                                <div id="Questions" class="text-start p-3">
+
+                                    <h3 id="ques"></h3>
+
+
+                                    <div class="d-flex flex-column gap-3">
+
+                                        <div>
+                                            <input type="radio" class="btn-check" name="options" id="option1"
+                                                autocomplete="off">
+                                            <label id="option1-label" class="btn btn-outline-primary col-12 text-start"
+                                                for="option1">${quizQues[questionIndex].options[0]}</label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" class="btn-check" name="options" id="option2"
+                                                autocomplete="off">
+                                            <label id="option2-label" class="btn btn-outline-primary col-12 text-start"
+                                                for="option2">${quizQues[questionIndex].options[1]}</label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" class="btn-check" name="options" id="option3"
+                                                autocomplete="off">
+                                            <label id="option3-label" class="btn btn-outline-primary col-12 text-start"
+                                                for="option3">${quizQues[questionIndex].options[2]}</label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" class="btn-check" name="options" id="option4"
+                                                autocomplete="off">
+                                            <label id="option4-label" class="btn btn-outline-primary col-12 text-start"
+                                                for="option4">${quizQues[questionIndex].options[3]}</label>
+                                        </div>
+                                    </div>
+
+                                    <div class='mt-3 text-end'>
+                                        <button class='btn btn-outline-dark' onclick="nextQues()">Next</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+
+    <script type="module" src="./assets/JS/quiz.js"></script>
+    <script src="./assets/JS/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
