@@ -31,8 +31,7 @@
 
                     <!-- title start -->
                     <div class="p-3">
-                        <h1 class="text-center display-3 fw-normal"><span class="text-capitalize" id="heading"></span>
-                            Quiz</h1>
+                        <h1 class="text-center display-3 fw-normal"><span class="text-capitalize" id="heading"></span></h1>
 
                         <!-- btn / question -->
                         <div class="mt-5 text-center">
@@ -42,8 +41,11 @@
                             <!-- questions -->
                             <div id="quizQuesBody" class="d-none">
                                 <div id="Questions" class="text-start p-3">
+                                    
+                                    <p class="text-end h4" id="timer">00:00:00</p>
 
                                     <h3 id="ques"></h3>
+
 
 
                                     <div class="d-flex flex-column gap-3">
@@ -75,7 +77,7 @@
                                     </div>
 
                                     <div class='mt-3 text-end'>
-                                        <button class='btn btn-outline-dark' onclick="nextQues()">Next</button>
+                                        <button id="nextSubmit" class='btn btn-outline-dark' onclick="nextQues()"></button>
                                     </div>
 
                                 </div>

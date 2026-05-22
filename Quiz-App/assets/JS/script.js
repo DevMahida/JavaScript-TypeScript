@@ -1,6 +1,7 @@
 let htmlStart = document.getElementById("htmlStart");
 let cssStart = document.getElementById("cssStart");
 let jsStart = document.getElementById("jsStart");
+let randomQuiz = document.getElementById("randomQuiz");
 
 
 htmlStart.addEventListener("click", function () {
@@ -42,4 +43,16 @@ jsStart.addEventListener("click", function () {
 
 });
 
-export default Script
+randomQuiz.addEventListener("click", function () {
+
+    localStorage.clear();
+
+    localStorage.setItem(
+        "selectedQuiz",
+        "randomQuiz"
+    );
+
+    window.location.href = "./quiz.html";
+
+});
+
