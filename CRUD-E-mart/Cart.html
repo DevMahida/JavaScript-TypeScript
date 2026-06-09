@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+
+    <!-- remix cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+
+    <!-- css -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+
+    <div class="d-flex">
+
+        <aside class="aside bg-dark p-3 position-sticky sticky-top">
+
+            <!-- website name -->
+            <h1 class="text-light text-center p-0 m-0">E-mart</h1>
+
+            <ul class="nav flex-column text-center mt-5 gap-4">
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="./index.html">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="./addProducts.html">Add Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" id="Product-link" href="./ViewProducts.html">View Products</a>
+                </li>
+            </ul>
+
+        </aside>
+
+        <div class="bg-dark-grey flex-grow-1">
+
+            <header class="bg-dark p-3 pe-5 text-white">
+                <div class="container">
+                    <div class="text-end">
+                        <a href="./Cart.html">
+                            <button type="button" class="btn btn-outline-light position-relative">
+                                <i class="ri-shopping-cart-2-line"></i>
+                                <span id="CartBadge"
+                                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                </span>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </header>
+
+            <main>
+
+                <section class="">
+                    <div class="container">
+                        <h1 class="text-white position-relative z-2 mt-3 ms-4">Cart</h1>
+                        <p class="ms-4 small text-light" id="searchMessage"></p>
+
+                        <table class="table table-dark  table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Product Image</th>
+                                    <th scope="col">Product Name</th>
+                                    <th scope="col">Product Description</th>
+                                    <th scope="col">Quantity</th>
+                                    <th scope="col">Price</th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="TableBody">
+
+                            </tbody>
+                            <tfoot id="TableFooter">
+
+                            </tfoot>
+                        </table>
+
+                    </div>
+                </section>
+
+            </main>
+        </div>
+    </div>
+
+    <!-- bootstrap js -->
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+
+    <!-- index.js -->
+    <!-- <script src="./assets/js/index.js"></script> -->
+
+    <script src="./assets/js/cart.js"></script>
+</body>
+
+</html>
