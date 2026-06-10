@@ -81,7 +81,7 @@ The `addProducts.html` form includes the following fields (all marked `required`
 
 ## Video Explanation
 
-[Project Video Explanation](https://drive.google.com/drive/folders/17yrfGFGXOlKW5Jo5pEOazxSfFp5HsslM?usp=sharing)
+<a href="https://drive.google.com/drive/folders/17yrfGFGXOlKW5Jo5pEOazxSfFp5HsslM?usp=sharing" target="_blank">Project Video Explanation</a>
 
 ## Contributing
 
