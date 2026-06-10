@@ -20,22 +20,25 @@ function CartBadge() {
 
 }
 
-function displayCart() {
+function displayCart(List) {
 
-    let cartList = CartList();
+    TableBody.innerHTML = ``;
+    TableFooter.innerHTML = ``;
 
-    console.log(cartList);
+    if (List.length == 0) {
+        TableBody.innerHTML = `
+            <tr>
+                <td class='text-center' colspan='6'>The Cart is Empty, Add Products...</td>
+            </tr>
+        `;
+    }
 
-    let totalAmount = cartList.reduce((sum, item) => {
-        console.log(item.Pprice,item.qty);
-        
+    let totalAmount = List.reduce((sum, item) => {
         return sum + (item.Pprice * item.qty);
     }, 0);
 
-    // console.log(totalAmount);
-    
 
-    cartList.forEach(cartItem => {
+    List.forEach(cartItem => {
         TableBody.innerHTML += `
             <tr>
                 <td>
@@ -43,10 +46,16 @@ function displayCart() {
                 </td>
                 <td>${cartItem.Pname}</td>
                 <td>${cartItem.Pdes}</td>
-                <td>${cartItem.qty}</td>
-                <td>${cartItem.qty * cartItem.Pprice}</td>
                 <td>
-                    <button class="btn btn-outline-danger">Delete</button>
+                    <div class='d-flex gap-3 align-items-center'>
+                        <button class='btn btn-outline-light' onclick='return qtyDec(${cartItem.PID})'>-</button>
+                        ${cartItem.qty}
+                        <button class='btn btn-outline-light' onclick='return qtyInc(${cartItem.PID})'>+</button>
+                    </div>
+                </td>
+                <td>₹${cartItem.qty * cartItem.Pprice}</td>
+                <td>
+                    <button onclick='return DeleteItem(${cartItem.PID})' class="btn btn-outline-danger">Delete</button>
                 </td>
             </tr>
         `;
@@ -54,14 +63,58 @@ function displayCart() {
         TableFooter.innerHTML = `
             <tr>
                 <td colspan="5" class="text-end">Total Amount : </td>
-                <td>${totalAmount}</td>
+                <td>₹${totalAmount}</td>
             </tr>
         `;
     });
 }
 
+function DeleteItem(id) {
+    console.log(id);
+
+    let cartList = CartList();
+
+    let resultList = cartList.filter(cart => cart.PID != id);
+
+    localStorage.setItem("CartList", JSON.stringify(resultList));
+
+    displayCart(resultList);
+    CartBadge();
+
+}
+
+function qtyInc(id) {
+    console.log(id);
+
+    let cartList = CartList().map(cart => {
+        if (cart.PID == id && cart.qty < 5) {
+            cart.qty++;
+        }
+        return cart;
+    });
+
+    localStorage.setItem("CartList", JSON.stringify(cartList));
+
+    displayCart(CartList());
+
+}
+
+function qtyDec(id) {
+    console.log(id);
+
+    let cartList = CartList().map(cart => {
+        if (cart.PID == id && cart.qty > 1) {
+            cart.qty--;
+        }
+        return cart;
+    });
+
+    localStorage.setItem("CartList", JSON.stringify(cartList));
+
+    displayCart(CartList());
+
+}
 
 CartBadge();
 
-
-displayCart();
+displayCart(CartList());
