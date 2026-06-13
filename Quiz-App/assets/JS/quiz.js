@@ -8,7 +8,7 @@ let userAnswers = [];
 let selectedQuiz = localStorage.getItem("selectedQuiz");
 
 // transfer that perticular question in variable
-let quizQues = questions[selectedQuiz];
+let quizQues = questions[selectedQuiz];//questions[html]
 
 // heading in quiz page
 let heading = document.getElementById("heading");
@@ -26,11 +26,11 @@ quizStart.addEventListener("click", function () {
     quizStart.classList.add('d-none');
     quizBack.classList.add('d-none');
     quizQuesBody.classList.remove('d-none');
-    quizQuesBody.classList.add('d-block');
     if ((localStorage.getItem("selectedQuiz") === "randomQuiz")) {
-        mixedIndex = Math.floor(Math.random() * mixedQuestions.length);
+        mixedIndex = Math.floor(Math.random() * mixedQuestions.length);//54
         storage = [mixedIndex];
     }
+
     showQues();
     startCounter();
 });
@@ -58,7 +58,7 @@ const showQues = () => {
     }
 
     if (localStorage.getItem("selectedQuiz") === "randomQuiz") {
-        ques.innerText = mixedQuestions[mixedIndex].question;
+        ques.innerText = mixedQuestions[mixedIndex].question;//54
         option1label.innerText = mixedQuestions[mixedIndex].options[0];
         option2label.innerText = mixedQuestions[mixedIndex].options[1];
         option3label.innerText = mixedQuestions[mixedIndex].options[2];
@@ -86,8 +86,8 @@ window.nextQues = () => {
 
     // convert radio btn id into number 0 to 3
     if (!(localStorage.getItem("selectedQuiz") === "randomQuiz")) {
-        userAnswers[questionIndex] = Number(
-            selectedOption.id.replace("option", "")
+        userAnswers[questionIndex] = Number(//0:0
+            selectedOption.id.replace("option", "")//0 ->
         ) - 1;
         console.log("Useranswer", userAnswers);
 
@@ -101,7 +101,7 @@ window.nextQues = () => {
     if (!(localStorage.getItem("selectedQuiz") === "randomQuiz")) {
         questionIndex++;
 
-        if (questionIndex < quizQues.length) {
+        if (questionIndex < quizQues.length) {//0 to 19, 20 
 
             // set option to unselect 
             document.querySelectorAll('input[name="options"]')
@@ -124,9 +124,9 @@ window.nextQues = () => {
     } else {
 
         if (counter < maxQues) {
-            mixedIndex = Math.floor(Math.random() * mixedQuestions.length);
-            storage.push(mixedIndex);
-            counter++;
+            mixedIndex = Math.floor(Math.random() * mixedQuestions.length);//12
+            storage.push(mixedIndex);//[20,12]
+            counter++;//1 -> 2
 
             document.querySelectorAll('input[name="options"]')
                 .forEach(option => option.checked = false);
@@ -136,7 +136,14 @@ window.nextQues = () => {
             showResult();
         }
 
+        // if last question then next -> submit
+        if (counter == maxQues) {
+            nextSubmit.innerText = "Submit";
+        }
+
     }
+
+
     console.log(storage);
     console.log(userAnswers);
     console.log(counter);
@@ -197,13 +204,12 @@ if (!(localStorage.getItem("selectedQuiz") === "randomQuiz")) {
     second = 0;
 } else {
     hour = 0;
-    minute = 5;
+    minute = 5;//5 -> 4
     second = 0;
 }
 
 
 let timer = document.getElementById("timer");
-
 timer.innerText = `${String(hour).padStart(2, "0")}:${String(minute).padStart(2, "0")}:${String(second).padStart(2, "0")}`;
 
 const startCounter = () => {
@@ -217,7 +223,7 @@ const startCounter = () => {
 
         second--;
 
-        if (second < 0) {
+        if (second < 0) {//58
             second = 59;
             minute--;
         }
@@ -226,7 +232,6 @@ const startCounter = () => {
             minute = 59;
             hour--;
         }
-
 
         timer.innerText = `${String(hour).padStart(2, "0")}:${String(minute).padStart(2, "0")}:${String(second).padStart(2, "0")}`;
     }, 1000);
