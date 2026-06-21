@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID-19 tracker </title>
+
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+
+    <!-- remix icon -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="./assets/CSS/bootstrap.min.css">
+
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+
+<body>
+
+    <header class="border-bottom border-2 bg-cs-lightblue">
+        <div class="p-3">
+            <h2 class="fw-bolder color-cs-primary" id="header"><i class="ri-virus-line"></i>India COVID-19 Tracker</h2>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- banner -->
+        <section>
+            <div class="banner d-flex align-items-center p-5">
+
+                <div class="row flex-grow-1">
+
+                    <!-- banner data -->
+                    <div class="col-lg-6">
+                        <div class="p-2">
+                            <!-- badge -->
+                            <span class="bg-cs-primary color-cs-grey fw-bold px-3 py-1 rounded-5"><i
+                                    class="ri-history-line"></i>
+                                Archival Repository</span>
+
+                            <!-- title -->
+                            <h1 class="display-5 fw-normal color-cs-primary mt-4">Preservating India's Pandemic History
+                            </h1>
+
+                            <!-- banner line -->
+                            <p>
+                                A rigorous, transparent, and comprehensive database documenting the spread, containment,
+                                and public health response to COVID-19 across India. Vital for epidemiological research
+                                and future preparedness.
+                            </p>
+
+                            <div class="mt-4">
+                                <a href="#history" class="btn btn-primary">Explore Records</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- banner staticstics -->
+                    <div class="col-lg-6">
+                        <div class="bg-white shadow w-100 p-4 mt-4 mt-lg-0 rounded-4 position-relative">
+
+                            <!-- badge -->
+                            <span class="badge bg-cs-primary color-cs-grey fs-6 rounded-5"><i
+                                    class="ri-verified-badge-fill "></i> Verified Data</span>
+
+                            <!-- confirmed cases -->
+                            <div class="color-cs-primary">
+                                <p class=" m-0">TOTAL CONFIRMED CASES</p>
+                                <div class="d-flex justify-content-between align-items-end">
+                                    <h1 class="mb-0">34,718,602</h1>
+                                    <i class="ri-line-chart-line fs-3 me-2"></i>
+                                </div>
+                                <hr>
+                            </div>
+
+                            <!-- recoveries -->
+                            <div class="text-secondary">
+                                <p class="color-cs-primary m-0">TOTAL RECOVERIES</p>
+                                <div class="d-flex justify-content-between align-items-end">
+                                    <h4>34,242,124</h4>
+                                    <i class="fa-solid fa-bandage fs-3 me-2 bandage"></i>
+                                </div>
+                                <hr>
+                            </div>
+
+                            <!-- deaths -->
+                            <div class="text-danger">
+                                <p class="color-cs-primary m-0">TOTAL DEATHS</p>
+                                <div class="d-flex justify-content-between align-items-end">
+                                    <h4>476,478</h4>
+                                    <i class="fa-solid fa-square-poll-vertical fs-3 me-2"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- impact -->
+        <section class="bg-cs-lightblue border-top border-bottom border-2">
+            <div class="p-5">
+
+                <!-- title -->
+                <div>
+                    <h2 class="mb-1">Understanding the Impact</h2>
+                    <span>
+                        Explore how COVID-19 evolved in India through historical case trends, public health measures,
+                        and key pandemic insights.
+                    </span>
+                </div>
+
+                <!-- impact cards -->
+                <div class="row mt-3 g-4">
+
+                    <!-- pandemic overview -->
+                    <div class="col-lg-4">
+                        <div class="border border-2 rounded-3 position-relative">
+                            <p class="bg-danger height-5 rounded-top-2"></p>
+                            <div class="p-4">
+
+                                <span class="fs-2 bg-cs-lightRed color-cs-red px-2 py-1 rounded-3"><i
+                                        class="ri-virus-line"></i></span>
+
+                                <div class="mt-3">
+                                    <h4>Pandemic Overview</h4>
+                                    <p class="mb-0">
+                                        COVID-19 was first detected in India in early 2020 and evolved through multiple
+                                        waves, including the severe Delta wave of 2021. Historical case records help
+                                        document how the pandemic spread across the country and affected millions of
+                                        people over time.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- india's response -->
+                    <div class="col-lg-4">
+                        <div class="border border-2 rounded-3 position-relative">
+                            <p class="bg-cs-dull-blue height-5 rounded-top-2"></p>
+                            <div class="p-4">
+
+                                <span class="fs-2 bg-cs-light-blue color-cs-dull-blue px-2 py-1 rounded-3">
+                                    <i class="fa-solid fa-shield-heart"></i>
+                                </span>
+
+                                <div class="mt-3">
+                                    <h4>India's Response</h4>
+                                    <p class="mb-0">
+                                        India implemented nationwide lockdowns, testing programs, containment measures,
+                                        and one of the world's largest vaccination campaigns. Historical data provides
+                                        insight into how these interventions influenced case trends, recoveries, and
+                                        mortality rates throughout different phases of the pandemic.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- why this data matters -->
+                    <div class="col-lg-4">
+                        <div class="border border-2 rounded-3 position-relative">
+                            <p class="bg-cs-primary height-5 rounded-top-2"></p>
+                            <div class="p-4">
+
+                                <span class="fs-2 bg-cs-primary text-secondary px-2 py-1 rounded-3">
+                                    <i class="ri-database-2-fill"></i>
+                                </span>
+
+                                <div class="mt-3">
+                                    <h4>Why This Data Matters</h4>
+                                    <p class="mb-0">
+                                        This archive preserves verified historical COVID-19 statistics for research,
+                                        education, and public reference. By analyzing past trends in confirmed cases,
+                                        recoveries, and deaths, users can better understand the pandemic's impact and
+                                        support future public health planning.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Historical Records Archive -->
+        <section id="history">
+            <div class="p-5">
+                <!-- title -->
+                <div>
+                    <div class="d-flex justify-content-between align-items-end">
+                        <div>
+                            <h2 class="mb-1">Historical Record Archive</h2>
+                            <span>
+                                Explore archived COVID-19 statistics and track how the pandemic evolved over time in
+                                India.
+                            </span>
+                        </div>
+                        <!-- <div>
+                            <form class="d-flex gap-3">
+                                <input class="form-control" type="search" name="search" id="search">
+                                <button class="btn btn-outline-secondary">Search</button>
+                            </form>
+                        </div> -->
+                    </div>
+
+                    <div class="table-responsive rounded-4 mt-5 border border-1 overflow-hidden">
+                        <table class="table table-striped mb-0">
+                            <thead class="table-primary">
+                                <tr style='text-align:center;'>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Confirmed Cases in Foreign</th>
+                                    <th scope="col">Confirmed Cases in India</th>
+                                    <th scope="col">Discharged</th>
+                                    <th scope="col">Deaths</th>
+                                    <th scope="col">Total</th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody">
+
+                            </tbody>
+                            <tfoot class="table-primary">
+                                <tr>
+                                    <td colspan="7" class="border-0 px-4" id="tfoot"></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-top border-2">
+        <div class="px-5 py-3">
+            <p class="text-center mb-0">
+                <i class="ri-copyright-line"></i> <span id="year"></span> India COVID-19 Historical Data Initiative. All
+                rights reserved.
+            </p>
+        </div>
+    </footer>
+
+
+
+    <!-- bootstrap -->
+    <script src="./assets/JS/bootstrap.bundle.min.js"></script>
+
+
+    <!-- script.js -->
+    <script src="./assets/JS/script.js"></script>
+</body>
+
+
+</html>
