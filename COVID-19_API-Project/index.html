@@ -20,7 +20,7 @@
         rel="stylesheet">
 
     <!-- bootstrap -->
-    <link rel="stylesheet" href="./assets/CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
 
     <!-- stylesheet -->
     <link rel="stylesheet" href="./assets/css/style.css">
@@ -39,7 +39,7 @@
 
         <!-- banner -->
         <section>
-            <div class="banner d-flex align-items-center p-5">
+            <div class="banner d-flex align-items-center py-5 px-4 p-sm-5">
 
                 <div class="row flex-grow-1">
 
@@ -113,7 +113,7 @@
 
         <!-- impact -->
         <section class="bg-cs-lightblue border-top border-bottom border-2">
-            <div class="p-5">
+            <div class="py-5 px-4 p-sm-5">
 
                 <!-- title -->
                 <div>
@@ -200,31 +200,45 @@
 
         <!-- Historical Records Archive -->
         <section id="history">
-            <div class="p-5">
+            <div class="py-5 px-4 p-sm-5">
                 <!-- title -->
                 <div>
-                    <div class="d-flex justify-content-between align-items-end">
-                        <div>
-                            <h2 class="mb-1">Historical Record Archive</h2>
-                            <span>
-                                Explore archived COVID-19 statistics and track how the pandemic evolved over time in
-                                India.
-                            </span>
+                    <div class="row g-4">
+
+                        <!-- title -->
+                        <div class=" col-lg-7 ">
+                            <div>
+                                <h2 class="mb-1">Historical Record Archive</h2>
+                                <span>
+                                    Explore archived COVID-19 statistics and track how the pandemic evolved over time in
+                                    India.
+                                </span>
+                            </div>
                         </div>
-                        <!-- <div>
-                            <form class="d-flex gap-3">
-                                <input class="form-control" type="search" name="search" id="search">
-                                <button class="btn btn-outline-secondary">Search</button>
-                            </form>
-                        </div> -->
+
+                        <!-- search -->
+                        <div class=" col-lg-5">
+                            <div>
+                                <form class="d-flex gap-3 flex-column flex-wrap">
+                                    <div class="d-flex gap-3 align-items-center">
+                                        <input class="form-control w-100" type="date" name="RangeStart" id="searchStart" min="2020-03-10" max="2021-12-15">
+                                        <span> To </span>
+                                        <input class="form-control w-100" type="date" name="RangeEnd" id="searchEnd" min="2020-03-10" max="2021-12-15">
+                                    </div>
+                                    <div class="text-end">
+                                        <button class="btn btn-outline-secondary" onclick="Search()">Search</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="table-responsive rounded-4 mt-5 border border-1 overflow-hidden">
+                    <!-- display data table -->
+                    <div class="table-responsive table-wrapper rounded-4 mt-5 border border-1 overflow-hidden">
                         <table class="table table-striped mb-0">
                             <thead class="table-primary">
                                 <tr style='text-align:center;'>
                                     <th scope="col">Date</th>
-                                    <th scope="col">Confirmed Cases in Foreign</th>
                                     <th scope="col">Confirmed Cases in India</th>
                                     <th scope="col">Discharged</th>
                                     <th scope="col">Deaths</th>
@@ -245,6 +259,38 @@
 
                 </div>
             </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Location</th>
+                                        <th scope="col">Cases in India</th>
+                                        <th scope="col">Discharged</th>
+                                        <th scope="col">Deaths</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="modal-table-body">
+
+                                </tbody>
+                            </table>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
@@ -260,11 +306,11 @@
 
 
     <!-- bootstrap -->
-    <script src="./assets/JS/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
 
 
     <!-- script.js -->
-    <script src="./assets/JS/script.js"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
 
 

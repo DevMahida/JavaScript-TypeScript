@@ -79,3 +79,13 @@
     top: -15px;
     right: 30px;
 }
+
+@media (max-width: 578px) {
+    .table-wrapper{
+        overflow: auto !important;
+    }
+
+    .banner{
+        height: 100vh;
+    }
+}
