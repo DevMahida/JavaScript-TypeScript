@@ -13,6 +13,9 @@ let start = 0;
 let end = 11;
 let StartPage = 1;
 
+const history = JSON.parse(localStorage.getItem("COVID-19")).data;
+let currentData = history;
+
 const ApiCall = () => {
 
 
@@ -35,14 +38,11 @@ const ApiCall = () => {
 
 };
 
-const DisplayData = (start, end, StartPage) => {
+const DisplayData = (start, end, StartPage, history) => {
 
     tbody.innerHTML = "";
 
-    const history = JSON.parse(localStorage.getItem("COVID-19")).data;
     // console.log(history);
-
-
 
     let total = history.length;
 
@@ -72,7 +72,7 @@ const DisplayData = (start, end, StartPage) => {
     });
     tfoot.innerHTML = `
         <div class='d-flex justify-content-between'>
-            <span>Showing ${StartPage}  of ${Math.ceil(total / tableLength)} entries</span>
+            <span>Showing ${StartPage}  of ${Math.ceil(total / tableLength)} Pages</span>
             <div>
                 <button class='btn' id='previous' onclick='return previous(${start},${end},${StartPage})' ${start == 0 ? 'disabled' : ''}><</button>
                 <button class='btn' id='next' onclick='return next(${start},${end},${total},${StartPage})' ${end >= total ? 'disabled' : ''}>></button>
@@ -83,13 +83,14 @@ const DisplayData = (start, end, StartPage) => {
 }
 
 const next = (start, end, total, StartPage) => {
+
     let Next = document.getElementById('next');
 
     start += tableLength;
     end += tableLength;
     StartPage += 1;
 
-    DisplayData(start, end, StartPage);
+    DisplayData(start, end, StartPage, currentData);
 }
 
 const previous = (start, end, StartPage) => {
@@ -99,7 +100,7 @@ const previous = (start, end, StartPage) => {
     end -= tableLength;
     StartPage -= 1;
 
-    DisplayData(start, end, StartPage);
+    DisplayData(start, end, StartPage, currentData);
 }
 
 const ViewModal = (date) => {
@@ -107,9 +108,9 @@ const ViewModal = (date) => {
     let modalBody = document.getElementById("modal-table-body");
     let exampleModalLabel = document.getElementById("exampleModalLabel");
 
-    const history = JSON.parse(localStorage.getItem("COVID-19")).data;
+    const result = JSON.parse(localStorage.getItem("COVID-19")).data;
 
-    const data = history.find((ele) => date == ele.day);
+    const data = result.find((ele) => date == ele.day);
 
     modalBody.innerHTML = '';
 
@@ -134,23 +135,75 @@ const ViewModal = (date) => {
 
 }
 
-const Search = () => {
-
+const ResetSearch = () => {
     event.preventDefault();
 
-    let searchStart = document.getElementById("searchStart").value;
-    let searchEnd = document.getElementById("searchEnd").value;
-    console.log("Search Start :" + searchStart);
-    console.log("Search End :" +searchEnd);
+    currentData = history;
+    DisplayData(start, end, StartPage, currentData);
 
-    const history = JSON.parse(localStorage.getItem("COVID-19")).data;
+    let searchStartInput = document.getElementById("searchStart");
+    let searchEndInput = document.getElementById("searchEnd");
+
+    searchStartInput.classList.remove("border-danger", "border-2");
+    searchEndInput.classList.remove("border-danger", "border-2");
 
     document.getElementById("searchStart").value = '';
     document.getElementById("searchEnd").value = '';
 }
 
+const Search = () => {
+
+    event.preventDefault();
+
+    let searchStart = document.getElementById("searchStart").value;
+    let searchStartInput = document.getElementById("searchStart");
+
+    let searchEnd = document.getElementById("searchEnd").value;
+    let searchEndInput = document.getElementById("searchEnd");
+    console.log("Search Start :" + searchStart);
+    console.log("Search End :" + searchEnd);
+
+    if (!searchStart || !searchEnd) {
+
+        if (!searchStart) {
+            searchStartInput.classList.add("border-danger", "border-2");
+        } else {
+            searchStartInput.classList.remove("border-danger", "border-2");
+        }
+
+        if (!searchEnd) {
+            searchEndInput.classList.add("border-danger", "border-2");
+        } else {
+            searchEndInput.classList.remove("border-danger", "border-2");
+        }
+
+
+    } else {
+
+        searchStartInput.classList.remove("border-danger", "border-2");
+        searchEndInput.classList.remove("border-danger", "border-2");
+
+        currentData = JSON.parse(localStorage.getItem("COVID-19")).data
+            .filter((ele) => ele.day >= searchStart && ele.day <= searchEnd);
+
+        start = 0;
+        end = tableLength;
+        StartPage = 1;
+
+        DisplayData(start, end, StartPage, currentData);
+
+        console.log(currentData);
+    }
+
+
+
+
+    // document.getElementById("searchStart").value = '';
+    // document.getElementById("searchEnd").value = '';
+}
+
 // this is used to make sure that startDate < endDate
-searchStart.addEventListener("change",function(){
+searchStart.addEventListener("change", function () {
     let searchStart = document.getElementById("searchStart").value;
     let searchEnd = document.getElementById("searchEnd");
 
@@ -159,7 +212,7 @@ searchStart.addEventListener("change",function(){
 });
 
 ApiCall();
-DisplayData(start, end, StartPage);
+DisplayData(start, end, StartPage, currentData);
 
 
 
