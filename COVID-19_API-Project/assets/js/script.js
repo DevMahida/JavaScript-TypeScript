@@ -13,21 +13,28 @@ let start = 0;
 let end = 11;
 let StartPage = 1;
 
-const history = JSON.parse(localStorage.getItem("COVID-19")).data;
-let currentData = history;
+let history;
+let currentData;
 
-const ApiCall = () => {
-
+function ApiCall() {
 
     fetch('https://api.rootnet.in/covid19-in/stats/history').then((res) => res.json()).
         then((data) => {
 
             if (!localStorage.getItem("COVID-19")) {
                 localStorage.setItem("COVID-19", JSON.stringify(data));
-                DisplayData(start, end, StartPage);
+
+                history = JSON.parse(localStorage.getItem("COVID-19")).data;
+                currentData = history;
+
+                DisplayData(start, end, StartPage, currentData);
                 console.log("Data is stored in localStorage");
             } else {
                 console.log(JSON.parse(localStorage.getItem("COVID-19")));
+
+                history = JSON.parse(localStorage.getItem("COVID-19")).data;
+                currentData = history;
+                DisplayData(start, end, StartPage, currentData);
 
             }
 
@@ -42,9 +49,11 @@ const DisplayData = (start, end, StartPage, history) => {
 
     tbody.innerHTML = "";
 
-    // console.log(history);
+    console.log(history);
 
     let total = history.length;
+    console.log(total);
+
 
     history.slice(start, end).forEach(ele => {
 
@@ -212,7 +221,6 @@ searchStart.addEventListener("change", function () {
 });
 
 ApiCall();
-DisplayData(start, end, StartPage, currentData);
 
 
 
