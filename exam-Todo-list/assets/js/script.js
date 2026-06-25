@@ -1,7 +1,7 @@
 // document.getElementById("due-date").min = new Date().now();
 
-// let list = [];
-let list = JSON.parse(localStorage.getItem("TaskList")) || [];
+let list = [];
+let editID = null;
 let ListMenu = document.getElementById("showList");
 
 const addTask = () => {
@@ -19,17 +19,39 @@ const addTask = () => {
         return;
     }
 
+    list = JSON.parse(localStorage.getItem("TaskList")) || [];
+
+    if (editID == "") {
+        const task = {
+            id: Date.now(),
+            title,
+            desc,
+            priority,
+            dueDate
+        }
 
 
-    const task = {
-        id: Date.now(),
-        title,
-        desc,
-        priority,
-        dueDate
+        list.push(task);
+    } else {
+
+        list = list.map(ele => {
+
+            if (ele.id == editID) {
+                return {
+                    ...ele,
+                    title,
+                    desc,
+                    priority,
+                    dueDate
+                };
+            }
+
+            return ele;
+        });
+
+        editID = null;
     }
 
-    list.push(task);
 
     localStorage.setItem("TaskList", JSON.stringify(list));
 
@@ -40,14 +62,20 @@ const addTask = () => {
 
     alert("Task Added..");
 
-    showList();
+    showList(list);
 
 }
 
-const showList = () => {
+const showList = (list = JSON.parse(localStorage.getItem("TaskList")) || []) => {
+
     ListMenu.innerHTML = "";
 
-    list = JSON.parse(localStorage.getItem("TaskList")) || [];
+    if (list == "") {
+        ListMenu.innerHTML = "<p class='text-center'>List is Empty</p>";
+        return;
+    }
+
+    // list = JSON.parse(localStorage.getItem("TaskList")) || [];
 
     console.log(list);
 
@@ -87,7 +115,7 @@ const showList = () => {
 const deleteTask = (id) => {
     let tempList = JSON.parse(localStorage.getItem("TaskList")).filter(ele => id != ele.id);
     localStorage.setItem("TaskList", JSON.stringify(tempList));
-    showList();
+    showList(tempList);
 }
 
 const updateTask = (id) => {
@@ -99,7 +127,27 @@ const updateTask = (id) => {
     document.getElementById("desc").value = tempList.desc;
     document.getElementById("priority").value = tempList.priority;
     document.getElementById("due-date").value = tempList.dueDate;
-    
+
+    editID = id;
+
+}
+
+const Filter = () => {
+    event.preventDefault();
+    let filter = document.getElementById("filter").value;
+
+    if (filter == "") {
+        alert("Select the filter value.");
+        return;
+    }
+    if (filter == "all") {
+        showList();
+        return;
+    }
+
+    let tempList = JSON.parse(localStorage.getItem("TaskList")).filter(ele => filter == ele.priority);
+
+    showList(tempList);
 }
 
 showList();
