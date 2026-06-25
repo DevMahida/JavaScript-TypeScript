@@ -1,0 +1,91 @@
+:root{
+    --color-cs-primary:#1e293b;
+    --color-cs-grey:#8291A6;
+    --color-cs-light-background:#F7F9FB;
+    --color-cs-lightRed: #ff7d8a;
+    --color-cs-Red: #880815;
+    --color-cs-dull-blue: #54647A;
+    --color-cs-light-blue:#D0E1FB;
+}
+
+.color-cs-primary{
+    color: var(--color-cs-primary) !important;
+}
+
+.color-cs-grey{
+    color: var(--color-cs-grey) !important;
+}
+
+.color-cs-red{
+    color: var(--color-cs-Red) !important;
+}
+
+.color-cs-dull-blue{
+    color: var(--color-cs-dull-blue) !important;
+}
+
+.bg-cs-primary{
+    background-color: var(--color-cs-primary);
+}
+
+.bg-cs-light-blue{
+    background-color: var(--color-cs-light-blue);
+}
+
+.bg-cs-dull-blue{
+    background-color: var(--color-cs-dull-blue);
+}
+
+.bg-cs-lightblue{
+    background-color: var(--color-cs-light-background);
+}
+
+.bg-cs-lightRed{
+    background-color: var(--color-cs-lightRed);
+}
+
+.height-5{
+    height: 5px;
+}
+
+/* ######################################
+                Header 
+#########################################*/
+
+
+#header {
+  font-family: "Saira", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* ######################################
+               Main
+#########################################*/
+
+.banner{
+    background-color: #EBEDF0;
+    height: 90vh;
+}
+
+.bandage{
+    transform: rotate(45deg);
+}
+
+.badge{
+    flex: 1;
+    position: absolute;
+    top: -15px;
+    right: 30px;
+}
+
+@media (max-width: 578px) {
+    .table-wrapper{
+        overflow: auto !important;
+    }
+
+    .banner{
+        height: 100vh;
+    }
+}
