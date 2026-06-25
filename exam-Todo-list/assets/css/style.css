@@ -1,0 +1,15 @@
+body{
+    background-color: azure;
+}
+
+.banner{
+    height: 300px;
+}
+
+.form{
+    width: 600px !important;
+}
+
+.task-list{
+    height: 800px;
+}
