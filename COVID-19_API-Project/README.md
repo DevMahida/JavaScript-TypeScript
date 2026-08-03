@@ -82,5 +82,8 @@ If you want to improve the project, a good place to start is:
 - improving accessibility and keyboard navigation,
 - or replacing the archived API source if a newer dataset is available.
 
+## Live Link
+[CoviStats](https://covistats.vercel.app/)
+
 ## License
 No license file is included in this project. Add one if you want to define reuse or distribution terms.
